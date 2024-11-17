@@ -112,21 +112,22 @@ fieldset {
 }
 
 .search-form__pseudo-checkbox {
+  display: flex;
   width: 0.99vw;
   height: 0.99vw;
   background-color: #000;
   border: 0.052vw solid #fff;
   margin-right: 0.26vw;
+  justify-content: center;
+  align-items: center;
 }
 
-.search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
   width: 0.781vw;
   height: 0.781vw;
   background-color: white;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
-  display: block;
+  border: 0.052vw solid #fff;
 }
 
 .search-form__label {
