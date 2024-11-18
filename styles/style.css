@@ -70,11 +70,14 @@ ol {
 .result__video-container {
   position: relative;
   margin-bottom: 0.833vw;
+  height: 72%;
 }
 
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -146,7 +149,7 @@ ol {
   height: 0.99vw;
   margin-right: 0.26vw;
   outline: 0.052vw solid #fff;
-  background-color: #000;
+  background-color: transparent;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -165,7 +168,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1.771vw;
+  min-height: 1.771vw;
   margin-bottom: 0.156vw;
   border: 0.052vw solid #fff;
   color: #fff;
@@ -226,14 +229,8 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.25vw;
-  overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.content__list::-webkit-scrollbar {
-  width: 0;
+  overflow-x: auto;
 }
 
 .content__list-item {
@@ -246,6 +243,10 @@ ol {
 
 .content__list-item:hover {
   text-decoration: underline;
+}
+
+.content__list > .content__list-item:not(:last-child) {
+  margin-bottom: 1.563vw;
 }
 
 .content__card-link {
@@ -281,6 +282,9 @@ ol {
   font-weight: bold;
   font-size: 1.563vw;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
